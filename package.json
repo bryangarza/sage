@@ -1,0 +1,30 @@
+{
+  "name": "sage",
+  "version": "1.0.0",
+  "description": "share the best of the web, once a day",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bryangarza/sage.git"
+  },
+  "keywords": [
+    "social",
+    "links",
+    "sharing"
+  ],
+  "author": "Bryan Garza",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bryangarza/sage/issues"
+  },
+  "homepage": "https://github.com/bryangarza/sage",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "express": "^4.10.6",
+    "jade": "^1.8.2",
+    "mongoose": "^3.8.21"
+  }
+}
