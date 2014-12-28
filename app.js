@@ -10,6 +10,10 @@ app.use(express.static(pub));
 
 app.set('view engine', 'jade');
 
+if (app.get('env') === 'development') {
+  app.locals.pretty = true;
+}
+
 function User(name, email) {
   this.name = name
   this.email = email
@@ -22,7 +26,7 @@ var users = [
 ];
 
 app.get('/', function (req, res) {
-  res.render('users', { users: users })
+  res.render('index', { users: users })
 });
 
 var server = app.listen(3000, function() {
