@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/bryangarza/sage",
   "dependencies": {
-    "bcrypt-nodejs": "0.0.3",
+    "bcrypt": "^0.8.0",
     "body-parser": "^1.10.0",
     "express": "^4.10.6",
     "jade": "^1.8.2",
