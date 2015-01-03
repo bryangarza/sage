@@ -3,6 +3,14 @@ html
   include ./includes/head.jade
   body
     div.container
-      div.row
-        h4 Sage
-    include ./includes/register.jade
+      block content
+        div.text-center
+          h1
+            span.fa.fa-moon-o
+              |Sage
+          a.btn.btn-default(href='/login')
+            span.fa.fa-user
+              |Log In
+          a.btn.btn-default(href='/register')
+            span.fa.fa-user
+              |Sign Up
