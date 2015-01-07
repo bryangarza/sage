@@ -2,7 +2,7 @@ extends index
 block content
   if message && message.length
     div.alert.alert-danger
-      #{message}
+      span= message
   form(method='post', action='/login')
     input(type='text', placeholder='email', name='email')
     input(type='text', placeholder='password', name='password')
