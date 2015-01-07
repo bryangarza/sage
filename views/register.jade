@@ -1,10 +1,10 @@
 extends index
 block content
-  if message
+  if message && message.length
     div.alert.alert-danger
       #{message}
   form(method='post', action='/register')
-    input(type='text', placeholder='email', name='register[email]')
-    input(type='text', placeholder='password', name='register[password]')
-    input(type='text', placeholder='username', name='register[username]')
+    input(type='text', placeholder='email', name='email')
+    input(type='text', placeholder='password', name='password')
+    input(type='text', placeholder='username', name='username')
     input(type="submit", value="Submit")

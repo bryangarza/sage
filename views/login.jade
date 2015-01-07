@@ -1,5 +1,9 @@
+extends index
 block content
+  if message && message.length
+    div.alert.alert-danger
+      #{message}
   form(method='post', action='/login')
-    input(type='text', placeholder='email', name='login[email]')
-    input(type='text', placeholder='password', name='login[password]')
+    input(type='text', placeholder='email', name='email')
+    input(type='text', placeholder='password', name='password')
     input(type="submit", value="Submit")
