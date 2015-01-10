@@ -24,11 +24,9 @@ module.exports = function(app, passport) {
     failureFlash: true
   }));
 
-  // app.get('/user/:id', function (req, res) {
-  //   res.render('user', {
-  //     user: id
-  //   });
-  // });
+  app.get('/user/:id', function (req, res) {
+    res.render('user', { user : req.params.id });
+  });
 
   app.get('/submit', isLoggedIn, function(req, res) {
     res.render('submit');
