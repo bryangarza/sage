@@ -1,3 +1,5 @@
+var User = require('../models/user');
+
 module.exports = function(app, passport) {
 
   app.get('/', function (req, res) {
@@ -24,7 +26,7 @@ module.exports = function(app, passport) {
     failureFlash: true
   }));
 
-  app.get('/user/:id', function (req, res) {
+  app.get('/user/:id', getUser, function (req, res) {
     res.render('user', { user : req.params.id });
   });
 
@@ -45,4 +47,28 @@ function isLoggedIn(req, res, next) {
     return next();
 
   res.redirect('/');
+}
+
+function getUser(req, res, next) {
+  User.findOne({ 'local.username' : req.params.id }, function(err, user) {
+    if (!user) {
+
+      res.status(404);
+
+      if (req.accepts('html')) {
+        res.render('404', { error: req.url });
+        return;
+      }
+
+      if (req.accepts('json')) {
+        res.send({ error: 'Not found' });
+        return;
+      }
+
+      res.type('txt').send('Not found');
+      return;
+    }
+
+    return next();
+  });
 }
